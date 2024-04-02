@@ -1,1 +1,1 @@
-24-1 Programming Studio Java Labs
+24-1 Programming Studio Java Programming Labs
