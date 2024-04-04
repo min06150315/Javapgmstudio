@@ -43,14 +43,14 @@ public class Java013
         }
 
         System.out.print("English - ");
-        if (kor >= 70){
+        if (eng >= 70){
             System.out.println("Pass");
         }else {
             System.out.println("Fail");
         }
 
         System.out.print("Math - ");
-        if (kor >= 70){
+        if (math >= 70){
             System.out.println("Pass");
         }else {
             System.out.println("Fail");
