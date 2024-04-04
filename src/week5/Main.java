@@ -118,8 +118,13 @@ public class Main {
         // 두 좌표의 거리 계산하기
         double result = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
 
+        // 소수점 구현
+        int all = (int)(result * 10);
+        int front = all / 10;
+        int end = all % 10;
+
         // 결과 출력
-        System.out.println(result);
+        System.out.println(front + "." + end);
     }
 
     void J005()
@@ -249,14 +254,14 @@ public class Main {
         }
 
         System.out.print("English - ");
-        if (kor >= 70){
+        if (eng >= 70){
             System.out.println("Pass");
         }else {
             System.out.println("Fail");
         }
 
         System.out.print("Math - ");
-        if (kor >= 70){
+        if (math >= 70){
             System.out.println("Pass");
         }else {
             System.out.println("Fail");
@@ -287,6 +292,7 @@ public class Main {
 
     void J015()
     {
+        System.out.println("J015. 3개의 수 중 최댓값과 최솟값 구하기");
         int num1, num2, num3;
         int max_num, min_num;
 
