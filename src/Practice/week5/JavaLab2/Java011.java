@@ -1,5 +1,5 @@
 // J011. 비만 판정하기
-package JavaLab2;
+package Practice.week5.JavaLab2;
 import java.util.Scanner;
 public class Java011
 {
@@ -14,13 +14,16 @@ public class Java011
         double bmi;
 
         Scanner keyboard = new Scanner(System.in);
-
+        
+        // 유저에게 키, 몸무게 입력 받기
         System.out.print("Enter the height and weight (cm, kg): ");
         height = keyboard.nextInt();
         weight = keyboard.nextInt();
-
+        
+        // BMI 계산하기
         bmi = weight / Math.pow(height * 0.01, 2);
-
+        
+        // 비만 판정하기
         if (bmi >= 25){
             System.out.println("Yes");
         }else {

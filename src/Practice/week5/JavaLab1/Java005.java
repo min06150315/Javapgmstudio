@@ -1,5 +1,5 @@
 // J005. 날짜(월, 일)를 입력받아 1년 중 몇번째 날인지 계산
-package JavaLab1;
+package Practice.week5.JavaLab1;
 import java.util.Scanner;
 
 public class Java005
@@ -15,11 +15,13 @@ public class Java005
         int day_count = 0;
 
         Scanner keyboard = new Scanner(System.in);
-
+        
+        // 유저에게 날짜 입력 받기
         System.out.print("Enter the date (month, day): ");
         month = keyboard.nextInt();
         day = keyboard.nextInt();
-
+    
+        // 날짜 세기
         if (month == 1){
             day_count = day;
         }else {
@@ -34,6 +36,7 @@ public class Java005
             }
             day_count += day;
         }
+        // 결과 출력
         System.out.println(day_count);
     }
 }
