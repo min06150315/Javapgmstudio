@@ -11,9 +11,9 @@ public class Main
     {
         Main pStudio = new Main();
         Scanner keyboard = new Scanner(System.in);
-        int num;
 
-        // User Input
+        // 원하는 문제 번호 입력받아서 보여주기
+        int num;
         while (true) {
             System.out.print("Enter the Problem Number: ");
             num = keyboard.nextInt();
