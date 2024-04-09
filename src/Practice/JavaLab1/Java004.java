@@ -1,5 +1,5 @@
 // J004. 좌표 2개를 입력받은 후 좌표간 거리 계산
-package Practice.week5.JavaLab1;
+package Practice.JavaLab1;
 import java.util.Scanner;
 
 import static java.lang.Math.*;

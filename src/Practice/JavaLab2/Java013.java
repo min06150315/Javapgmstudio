@@ -1,5 +1,5 @@
 // J013. 국,영,수 과목 점수를 입력받아 총점과 평균을 계산하고, 등급 판정
-package Practice.week5.JavaLab2;
+package Practice.JavaLab2;
 import java.util.Scanner;
 public class Java013
 {

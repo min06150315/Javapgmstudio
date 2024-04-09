@@ -1,5 +1,5 @@
 // J014. 연봉을 입력받아 소득세 계산
-package Practice.week5.JavaLab2;
+package Practice.JavaLab2;
 
 import java.util.Scanner;
 

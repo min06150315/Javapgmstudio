@@ -1,5 +1,5 @@
 // J002. 섭씨 온도를 화씨 온도로 변환
-package Practice.week5.JavaLab1;
+package Practice.JavaLab1;
 import java.util.Scanner;
 public class Java002
 {

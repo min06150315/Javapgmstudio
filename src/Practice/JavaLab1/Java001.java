@@ -1,5 +1,5 @@
 // J001. 키와 몸무게로 비만도(BMI) 계산
-package Practice.week5.JavaLab1;
+package Practice.JavaLab1;
 import java.util.Scanner;
 public class Java001
 {

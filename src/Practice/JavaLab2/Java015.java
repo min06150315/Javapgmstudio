@@ -1,5 +1,5 @@
 // J015. 3개의 수 중 최댓값과 최솟값 구하기
-package Practice.week5.JavaLab2;
+package Practice.JavaLab2;
 
 import java.util.Scanner;
 

@@ -1,5 +1,5 @@
 // J003. 아파트의 제곱미터 수치를 평형으로 바꾸기
-package Practice.week5.JavaLab1;
+package Practice.JavaLab1;
 import java.util.Scanner;
 public class Java003
 {

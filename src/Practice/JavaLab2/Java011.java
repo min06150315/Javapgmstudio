@@ -1,5 +1,5 @@
 // J011. 비만 판정하기
-package Practice.week5.JavaLab2;
+package Practice.JavaLab2;
 import java.util.Scanner;
 public class Java011
 {

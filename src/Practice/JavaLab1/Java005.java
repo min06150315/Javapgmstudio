@@ -1,5 +1,5 @@
 // J005. 날짜(월, 일)를 입력받아 1년 중 몇번째 날인지 계산
-package Practice.week5.JavaLab1;
+package Practice.JavaLab1;
 import java.util.Scanner;
 
 public class Java005

@@ -1,5 +1,5 @@
 // J012. 아파트 평형 계산 및 종류 판정
-package Practice.week5.JavaLab2;
+package Practice.JavaLab2;
 import java.util.Scanner;
 public class Java012
 {
