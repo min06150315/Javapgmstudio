@@ -25,7 +25,7 @@ public class Java024
         // 배열 복사본 만들어 놓기
         int[] num_temp = numbers.clone();
 
-        // 배열 큰 수부터 정렬하기
+        // 배열 정렬하기
         Arrays.sort(numbers);
 
         // 첫 번째, 두 번째로 큰 수 구하기
