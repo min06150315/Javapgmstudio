@@ -24,3 +24,6 @@ J028 <br>
 
 J029 <br>
 <img src = "https://github.com/min06150315/Javapgmstudio/blob/main/src/week6/screenshots/J029.png">
+
+J030 <br>
+<img src = "https://github.com/min06150315/Javapgmstudio/blob/main/src/week6/screenshots/J030.png">
