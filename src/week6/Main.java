@@ -123,7 +123,7 @@ public class Main
                 second_max_index = i;
 
         // 결과 출력하기
-        System.out.println("[" + (second_max_index + 1) + "] " + second);
+        System.out.println("[" + (second_max_index) + "] " + second);
     }
     public void J025()
     {
