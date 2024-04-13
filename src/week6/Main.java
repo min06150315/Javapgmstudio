@@ -123,7 +123,7 @@ public class Main
                 second_max_index = i;
 
         // 결과 출력하기
-        System.out.println("[" + (second_max_index) + "] " + second);
+        System.out.println("[" + (second_max_index + 1) + "] " + second);
     }
     public void J025()
     {
@@ -174,8 +174,8 @@ public class Main
         max_num = number[num - 1];
         min_num = number[0];
 
-        System.out.println("Biggest " + max_num);
-        System.out.println("Smallest " + min_num);
+        System.out.println("가장 큰 수 " + max_num);
+        System.out.println("가장 작은 수 " + min_num);
     }
     public void J027()
     {
@@ -235,6 +235,14 @@ public class Main
             average_class[i] = (double) sum_grade[i] / 5;
             average_class[i] = Double.parseDouble(df.format(average_class[i]));
         }
+
+        // 결과 출력
+        System.out.println("Korean - Sum " + sum_grade[0] + ", Average " + average_class[0]);
+        System.out.println("English - Sum " + sum_grade[1] + ", Average " + average_class[1]);
+        System.out.println("Math - Sum " + sum_grade[2] + ", Average " + average_class[2]);
+
+        for (int i = 0; i < 5; i++)
+            System.out.println("#" + (i + 1) + " Student - Sum " + sum_student[i] + ", Average " + average_student[i] + ", Grade " + grade[i]);
     }
     public void J029()
     {
@@ -261,6 +269,7 @@ public class Main
                 System.out.print("Numbers -");
                 for (int i = 0; i < 10; i++)
                     System.out.print(" " + number[i]);
+                System.out.print("\n");
                 break;
             }
         }
