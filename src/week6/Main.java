@@ -30,6 +30,7 @@ public class Main
     }
     public void J021()
     {
+        System.out.println("J021. 비만인 사람은 몇 명인가?");
         int people = 0;
         Scanner keyboard = new Scanner(System.in);
 
@@ -49,6 +50,7 @@ public class Main
     }
     public void J022()
     {
+        System.out.println("J022. 아파트 크기별 개수 세기?");
         Scanner keyboard = new Scanner(System.in);
         double[] m2_area = new double[10];
         double[] pyung_area = new double[10];
@@ -75,6 +77,7 @@ public class Main
     }
     public void J023()
     {
+        System.out.println("J023. 입력 받은 숫자들의 총합계와 평균 값 구하기");
         Scanner keyboard = new Scanner(System.in);
         int count;
         int totalSum = 0;
@@ -89,10 +92,11 @@ public class Main
         }
 
         average = (double) totalSum / count;
-        System.out.print(totalSum + " " + average);
+        System.out.println(totalSum + " " + average);
     }
     public void J024()
     {
+        System.out.println("J024. 두번째로 큰 수의 순서 찾기");
         Scanner keyboard = new Scanner(System.in);
         int[] numbers = new int[10];
         int first;
@@ -123,6 +127,7 @@ public class Main
     }
     public void J025()
     {
+        System.out.println("J025. 배열을 이용해 연중 날짜 계산하기");
         Scanner keyboard = new Scanner(System.in);
         int[] monthdays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int month, day;
@@ -154,6 +159,7 @@ public class Main
     }
     public void J026()
     {
+        System.out.println("// J026. 입력 받은 숫자들 중에서 가장 큰 수와 가장 작은 수 구하기");
         Scanner keyboard = new Scanner(System.in);
         int num;
         int max_num, min_num;
@@ -173,6 +179,7 @@ public class Main
     }
     public void J027()
     {
+        System.out.println("J027. 누가 비만인가?");
         Scanner keyboard = new Scanner(System.in);
         int[] height = new int[10];
         int[] weight = new int[10];
@@ -198,6 +205,7 @@ public class Main
     }
     public void J028()
     {
+        System.out.println("J028. 5명의 점수 분석하기");
         Scanner keyboard = new Scanner(System.in);
         DecimalFormat df = new DecimalFormat("#.#");
         int[][] jumsu = new int[5][3];  // 5명의 3과목 점수를 저장하고 있는 2차원 배열
@@ -230,6 +238,7 @@ public class Main
     }
     public void J029()
     {
+        System.out.println("J029. 겹치지 않는 숫자 10개 입력 받기");
         Scanner keyboard = new Scanner(System.in);
         int[] number = new int[10];     // 사용자가 입력한 숫자 10개
         int count = 0;      // 현재까지 입력된 숫자의 개수(0~10)
