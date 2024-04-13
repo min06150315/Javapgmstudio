@@ -32,6 +32,7 @@ public class Java029
                 System.out.print("Numbers -");
                 for (int i = 0; i < 10; i++)
                     System.out.print(" " + number[i]);
+                System.out.print("\n");
                 break;
             }
         }
