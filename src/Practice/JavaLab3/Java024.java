@@ -18,11 +18,10 @@ public class Java024
         int second_max_index = 0;
 
         // 10개의 숫자 입력받기
-        System.out.print("Enter the 10 numbers: ");
         for (int i = 0; i < 10; i++)
             numbers[i] = keyboard.nextInt();
 
-        // 배열 복사본 만들어 놓기
+        // 출력을 위한 배열 복사본 만들어 놓기
         int[] num_temp = numbers.clone();
 
         // 배열 정렬하기
