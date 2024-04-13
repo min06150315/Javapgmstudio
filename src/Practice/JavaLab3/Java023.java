@@ -24,6 +24,6 @@ public class Java023
         }
 
         average = (double) totalSum / count;
-        System.out.print(totalSum + " " + average);
+        System.out.println(totalSum + " " + average);
     }
 }
