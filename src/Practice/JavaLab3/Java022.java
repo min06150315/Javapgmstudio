@@ -18,7 +18,6 @@ public class Java022
         int count3 = 0;
         int count4 = 0;
 
-        System.out.print("Enter the 10 m2_areas: ");
         for (int i = 0; i < 10; i++) {
             m2_area[i] = keyboard.nextDouble();
         }
