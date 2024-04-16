@@ -12,13 +12,13 @@ public class Java033
     public void J033()
     {
         Scanner keyboard = new Scanner(System.in);
-        int count;
-        String longest, shortest;
+        int count;  // 학부 개수
+        String longest = "", shortest = "";   // 가장 긴 학부명, 가장 짧은 학부명
 
         count = keyboard.nextInt();
         keyboard.nextLine();
 
-        String[] name = new String[count];
+        String[] name = new String[count];  // 입력받은 학부명
         int[] len = new int[count];
 
         for (int i = 0; i < count; i++) {
@@ -26,10 +26,24 @@ public class Java033
             len[i] = name[i].length();
         }
         Arrays.sort(len);
+        
+        // 가장 긴 학부명 찾기
+        for (int i = 0; i < count; i++) {
+            if (name[i].length() == len[count - 1]) {
+                longest = name[i];
+                break;
+            }
+        }
 
-        longest = name[len[count - 1] - 1];
-        shortest = name[len[0] - 1];
-
+        // 가장 짧은 학부명 찾기
+        for (int i = 0; i < count; i++) {
+            if (name[i].length() == len[0]) {
+                shortest = name[i];
+                break;
+            }
+        }
+        
+        // 결과 출력
         System.out.println("Longest: " + longest);
         System.out.println("Shortest: " + shortest);
     }
