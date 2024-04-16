@@ -23,6 +23,7 @@ public class Java031
         int len = password.length();
 
         StringBuilder newPW = new StringBuilder(password.substring(0, 2));
+
         for (int i = 2; i < len; i++)
             newPW.append("*");
 
