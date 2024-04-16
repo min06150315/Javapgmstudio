@@ -18,6 +18,7 @@ public class Java032
         str = keyboard.nextLine();
 
         int len = str.length();
+
         for (int i = len - 1; i >= 0; i--)
             reverse.append(str.charAt(i));  // reverse += str.charAt(i);
 
