@@ -11,5 +11,20 @@ public class Java035
     public void J035()
     {
         Scanner keyboard = new Scanner(System.in);
+        String birthday;
+        String year, month, day;
+        int sum = 0;
+
+        birthday = keyboard.next();
+        year = birthday.substring(0, 4);
+        month = birthday.substring(4, 6);
+        day = birthday.substring(6, 8);
+
+        for (int i = 0; i < 4; i++)
+            sum += Integer.parseInt(year.substring(i, i + 1));
+
+        sum += Integer.parseInt(month) + Integer.parseInt(day);
+
+        System.out.println(sum);
     }
 }
