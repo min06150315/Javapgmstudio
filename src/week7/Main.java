@@ -170,8 +170,7 @@ public class Main
 
         if (str.equalsIgnoreCase(reverse.toString()))
             System.out.println("Yes");
-        else
-            System.out.println("No");
+        else System.out.println("No");
     }
     public void J037()
     {
