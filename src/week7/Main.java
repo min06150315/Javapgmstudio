@@ -26,7 +26,30 @@ public class Main
     }
     public void J031()
     {
+        Scanner keyboard = new Scanner(System.in);
+        String userid;
+        String password;
+        String name;
 
+        userid = keyboard.next();
+        password = keyboard.next();
+        keyboard.nextLine();
+        name = keyboard.nextLine();
+
+        int len = password.length();
+
+        StringBuilder newPW = new StringBuilder(password.substring(0, 2));
+
+        for (int i = 2; i < len; i++)
+            newPW.append("*");
+
+        if (len < 3) {
+            System.out.println("Error! password is too short.");
+        } else {
+            System.out.println("User id: " + userid);
+            System.out.println("Password: " + newPW);
+            System.out.println("User Name: " + name);
+        }
     }
     public void J032()
     {
