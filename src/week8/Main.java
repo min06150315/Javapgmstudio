@@ -50,7 +50,7 @@ public class Main {
             MyString myString = new MyString();
             myString.str1 = keyboard.next();
             myString.str2 = keyboard.next();
-            myString.print01();
+            myString.print();
         }
     }
     static class Lotto {
@@ -158,7 +158,7 @@ public class Main {
             }
             return num;
         }
-        public void print01() {
+        public void print() {
             int num;
             num = whichFirst(str1.toLowerCase(), str2.toLowerCase());
             System.out.print(num);
