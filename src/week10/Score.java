@@ -5,6 +5,8 @@ public class Score {
     int[][] jumsu;
     int[] sum_student;
     double[] average_student;
+    int[] sum_class;
+    double[] average_class;
     public Score(int count) {   // 생성자 (파라미터로 학생 인원수 지정, 초기화 진행)
         this.count = count;
         jumsu = new int[count][3];
@@ -16,16 +18,15 @@ public class Score {
         for (int i = 0; i < count; i++) {
             for (int j = 0; j < 3; j++) {
                 jumsu[i][j] = keyboard.nextInt();
-                sum_student[i] +=  jumsu[i][j];
+                sum_student[i] += jumsu[i][j];
             }
             average_student[i] = sum_student[i] / 3.0;
         }
     }
     public void printScore() {  // 학생들의 점수 출력
         for (int i = 0; i < count; i++) {
-            for (int j = 0; j < 3; j++) {
+            for (int j = 0; j < 3; j++)
                 System.out.print(jumsu[i][j] + " ");
-            }
             System.out.println("총점: " + sum_student[i] + "  평균: " + average_student[i]);
         }
     }
@@ -33,5 +34,14 @@ public class Score {
         System.out.println(num + "번 학생의 국영수 점수: " + jumsu[num - 1][0] + " " + jumsu[num - 1][1] + " " + jumsu[num - 1][2]);
         System.out.println(num + "번 학생의 총점: " + sum_student[num - 1]);
         System.out.println(num + "번 학생의 총점: " + average_student[num - 1]);
+    }
+    public void printScore(int num, String classname) { // num 과목의 총점, 평균 출력
+        sum_class = new int[3];
+        average_class = new double[3];
+        for (int i = 0; i < 3; i ++) {
+            for (int j = 0; j < 5; j++)
+                sum_class[i] += jumsu[j][i];
+            average_class[i] = sum_class[i] / 5.0;
+        }
     }
 }
