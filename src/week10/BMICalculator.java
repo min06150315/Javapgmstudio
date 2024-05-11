@@ -30,7 +30,11 @@ public class BMICalculator {
     public void printBMI() {    // 이 사람의 이름, 신장, 체중, 비만도, 비만등급을 출력한다.
         System.out.println("Name: " + name);
         System.out.println(height + "cm " + weight + "kg");
-        System.out.println("BMI: " + bmi);
+        System.out.print("BMI: ");
+        int all = (int)(bmi * 10);
+        int front = all / 10;
+        int end = all % 10;
+        System.out.println(front + "." + end);
         System.out.print("Bmi Level: ");
 
         if (level == 1)
