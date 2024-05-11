@@ -46,11 +46,14 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
         Score score = new Score(5);
         score.getScore();
-        score.printScore(2, "국어");
+        int num;
+        String name;
+        num = keyboard.nextInt();
+        name = keyboard.next();
+        score.printScore(num, name);
     }
     // J055. 비만도 계산기
     void J055() {
-        Scanner keyboard = new Scanner(System.in);
         BMICalculator bmi = new BMICalculator();
         bmi.getHW();
         bmi.printBMI();
