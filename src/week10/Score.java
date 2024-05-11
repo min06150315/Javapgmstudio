@@ -27,13 +27,22 @@ public class Score {
         for (int i = 0; i < count; i++) {
             for (int j = 0; j < 3; j++)
                 System.out.print(jumsu[i][j] + " ");
-            System.out.println("총점: " + sum_student[i] + "  평균: " + average_student[i]);
+            System.out.print("총점: " + sum_student[i] + "  평균: ");
+            // 평균 소수점 1자리까지 출력하기
+            int all = (int)(average_student[i] * 10);
+            int front = all / 10;
+            int end = all % 10;
+            System.out.println(front + "." + end);
         }
     }
     public void printScore(int num) {   // num 학생의 점수, 총점, 평균 출력
         System.out.println(num + "번 학생의 국영수 점수: " + jumsu[num - 1][0] + " " + jumsu[num - 1][1] + " " + jumsu[num - 1][2]);
         System.out.println(num + "번 학생의 총점: " + sum_student[num - 1]);
-        System.out.println(num + "번 학생의 총점: " + average_student[num - 1]);
+        System.out.print(num + "번 학생의 평균: ");
+        int all = (int)(average_student[num - 1] * 10);
+        int front = all / 10;
+        int end = all % 10;
+        System.out.println(front + "." + end);
     }
     public void printScore(int num, String classname) { // num 과목의 총점, 평균 출력
         sum_class = new int[3];
@@ -42,6 +51,16 @@ public class Score {
             for (int j = 0; j < 5; j++)
                 sum_class[i] += jumsu[j][i];
             average_class[i] = sum_class[i] / 5.0;
+        }
+        if (num == 1) { // 1을 입력시 국어 점수를 출력
+            System.out.println(classname + "과목의 총점: " + sum_class[0]);
+            System.out.println(classname + "과목의 평균: " + average_class[0]);
+        }else if (num == 2) {   // num에 2를 입력시 영어 점수를 출력
+            System.out.println(classname + "과목의 총점: " + sum_class[1]);
+            System.out.println(classname + "과목의 평균: " + average_class[1]);
+        }else if (num == 3) {   // num에 3를 입력시 수학 점수를 출력
+            System.out.println(classname + "과목의 총점: " + sum_class[2]);
+            System.out.println(classname + "과목의 평균: " + average_class[2]);
         }
     }
 }
