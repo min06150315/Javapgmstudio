@@ -43,10 +43,16 @@ public class Main {
     }
     // J054. 국영수 점수 분석하기 - 3
     void J054() {
-
+        Scanner keyboard = new Scanner(System.in);
+        Score score = new Score(5);
+        score.getScore();
+        score.printScore(2, "국어");
     }
     // J055. 비만도 계산기
     void J055() {
-
+        Scanner keyboard = new Scanner(System.in);
+        BMICalculator bmi = new BMICalculator();
+        bmi.getHW();
+        bmi.printBMI();
     }
 }
