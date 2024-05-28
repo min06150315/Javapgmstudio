@@ -2,6 +2,7 @@
 package week13;
 
 import java.util.Scanner;
+import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +12,7 @@ public class Main {
         // 원하는 문제 번호 입력받아서 보여주기
         int num;
         while (true) {
-            System.out.print("Enter the Problem Number: ");
+            System.out.print("\nEnter the Problem Number: ");
             num = keyboard.nextInt();
 
             if (num == 81) pStudio.J081();
@@ -24,18 +25,92 @@ public class Main {
     }
     void J081() {
         // J081. 최댓값과 최솟값 구하기 (파일 버전)
+        String filename = "./src/week13/data1.txt";
+        Scanner inputStream = null;
+        int[] numbers = new int[10];
+        int count = 0;
+        try {
+            inputStream = new Scanner(new File(filename));
+        } catch (FileNotFoundException e) {
+            System.out.println("Error opening the file " + filename);
+            System.exit(0);
+        }
+        while (inputStream.hasNextInt()) {
+            int num = inputStream.nextInt();
+            numbers[count++] = num;
+        }
+        int min = numbers[0];
+        int max = numbers[0];
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] < min)
+                min = numbers[i];
+            if (numbers[i] > max)
+                max = numbers[i];
+        }
 
-
+        System.out.println("Maximum number: " + max);
+        System.out.println("Minimum number: " + min);
     }
     void J082() {
         // J082. 비만인 사람 비율 알아내기 (파일 버전)
+        String filename = "./src/week13/data2.txt";
+        Scanner inputStream = null;
+        int[] height = new int[5];
+        int[] weigth = new int[5];
+        double[] bmi = new double[5];
+        int count = 0;
+        int countBMI = 0;
+        try {
+            inputStream = new Scanner(new File(filename));
+        } catch (FileNotFoundException e) {
+            System.out.println("Error opening the file " + filename);
+            System.exit(0);
+        }
+        while (inputStream.hasNextInt()) {
+            int num1 = inputStream.nextInt();
+            height[count] = num1;
+            int num2 = inputStream.nextInt();
+            weigth[count] = num2;
+            count++;
+        }
+        for (int i = 0; i < height.length; i++) {
+            bmi[i] = weigth[i] / Math.pow(height[i] * 0.01, 2);
+            if (bmi[i] >= 25)
+                countBMI++;
+        }
 
-
+        double rate = (double) countBMI / height.length * 100;
+        System.out.println("All " + height.length + " persons.");
+        System.out.println("Total overweight persons: " + countBMI + " (" + rate + "%)");
     }
     void J083() {
         // J083. 국영수 점수 분석하기 (파일 버전)
+        ScoreManager manager = new ScoreManager();
+        String filename = "./src/week13/data3.txt";
+        Scanner inputStream = null;
+        try {
+            inputStream = new Scanner(new File(filename));
+        } catch (FileNotFoundException e) {
+            System.out.println("Error opening the file " + filename);
+            System.exit(0);
+        }
+        while (inputStream.hasNext()) {
+            String name = inputStream.next();
+            int kor = inputStream.nextInt();
+            int eng = inputStream.nextInt();
+            int math = inputStream.nextInt();
 
+            Score new_score = new Score(name, kor, eng, math);
+            manager.addList(new_score);
+        }
+        System.out.println("각 과목별 총점과 평균 점수를 출력");
+        manager.printClasses();
 
+        System.out.println("\n각 학생별 총점과 평균 점수를 출력");
+        manager.printStudents();
+
+        System.out.println("\n가장 높은 평균 점수를 받은 학생의 이름과 점수 출력");
+        manager.printHighest();
     }
     void J084() {
         // J084. 학부 영문이름 중 가장 긴 이름 찾기
