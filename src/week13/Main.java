@@ -25,7 +25,7 @@ public class Main {
     }
     void J081() {
         // J081. 최댓값과 최솟값 구하기 (파일 버전)
-        String filename = "./src/week13/data081.txt";
+        String filename = "./src/week13/data081_1.txt";
         Scanner inputStream = null;
         int[] numbers = new int[10];
         int count = 0;
@@ -53,7 +53,7 @@ public class Main {
     }
     void J082() {
         // J082. 비만인 사람 비율 알아내기 (파일 버전)
-        String filename = "./src/week13/data082.txt";
+        String filename = "./src/week13/data082_1.txt";
         Scanner inputStream = null;
         int[] height = new int[5];
         int[] weigth = new int[5];
@@ -86,7 +86,7 @@ public class Main {
     void J083() {
         // J083. 국영수 점수 분석하기 (파일 버전)
         ScoreManager manager = new ScoreManager();
-        String filename = "./src/week13/data083.txt";
+        String filename = "./src/week13/data083_1.txt";
         Scanner inputStream = null;
         try {
             inputStream = new Scanner(new File(filename));
@@ -114,7 +114,7 @@ public class Main {
     }
     void J084() {
         // J084. 학부 영문이름 중 가장 긴 이름 찾기
-        String filename = "./src/week13/name.txt";
+        String filename = "./src/week13/name_!.txt";
         Scanner inputStream = null;
         String[] majors = new String[13];
         int count = 0;
@@ -137,47 +137,48 @@ public class Main {
 
         for (int i = 1; i < count; i++) {
             int length = majors[i].length();
-            if (length > maxLength) {
+            if (length > maxLength)
                 maxLength = length;
-            }
-            if (length < minLength) {
+            if (length < minLength)
                 minLength = length;
-            }
         }
 
         System.out.print("Longset name : ");
         for (int i = 0; i < count; i++) {
-            if (majors[i].length() == maxLength) {
+            if (majors[i].length() == maxLength)
                 System.out.print(majors[i]);
-            }
         }
         System.out.print("\nShortest name : ");
         for (int i = 0; i < count; i++) {
-            if (majors[i].length() == minLength) {
+            if (majors[i].length() == minLength)
                 System.out.print(majors[i]);
-            }
         }
     }
     void J085() {
         // J085. 텍스트 파일 내의 알파벳(대소문자열)의 개수와 빈칸의 개수 구하기
-        ScoreManager manager = new ScoreManager();
-        String filename = "./src/week13/data085.txt";
+        String filename = "./src/week13/data085_1.txt";
         Scanner inputStream = null;
-        try {
-            inputStream = new Scanner(new File(filename));
-        } catch (FileNotFoundException e) {
+        int lowerCount = 0, upperCount = 0, spaceCount = 0;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            int c;
+            while ((c = reader.read()) != -1) {
+                char ch = (char) c;
+                if (Character.isLowerCase(ch)) {
+                    lowerCount++;
+                } else if (Character.isUpperCase(ch)) {
+                    upperCount++;
+                } else if (ch == ' ') {
+                    spaceCount++;
+                }
+            }
+        } catch (IOException e) {
             System.out.println("Error opening the file " + filename);
             System.exit(0);
         }
-        while (inputStream.hasNext()) {
-            String name = inputStream.next();
-            int kor = inputStream.nextInt();
-            int eng = inputStream.nextInt();
-            int math = inputStream.nextInt();
 
-            Score new_score = new Score(name, kor, eng, math);
-            manager.addList(new_score);
-        }
-
+        System.out.println("A~Z - " + upperCount);
+        System.out.println("a~z - " + lowerCount);
+        System.out.println("spaces - " + spaceCount);
     }
 }
