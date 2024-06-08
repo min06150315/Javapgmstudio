@@ -26,10 +26,11 @@ public class Main {
         }
     }
     void J091() {
-        // J091, 국영수 점수 분석하기 (HashMap 버전)
+        // J091, 국영수 점수 분석하기 (HashMap 버전)       // 데이터파일로부터 읽어들인 학생의 점수 데이터를 HashMap에 보관하기
         Scanner s = new Scanner(System.in);
         ScoreManager manager = new ScoreManager();
-        String filename = "./src/week13/TextFiles/data083_2.txt";
+        //String filename = "./src/week14/TextFiles/data091_1.txt";     // 첫번째 테스트용
+        String filename = "./src/week14/TextFiles/data091_2.txt";     // 두번째 테스트용
         int count = 1;
         Scanner inputStream = null;
         try {
@@ -44,13 +45,13 @@ public class Main {
             int eng = inputStream.nextInt();
             int math = inputStream.nextInt();
 
-            Score new_score = new Score(name, kor, eng, math);
-            manager.addHashMap(count++, new_score);
+            Score new_score = new Score(kor, eng, math);
+            manager.addHashMap(name, new_score);
         }
 
         while (true) {
             int menu;
-            System.out.print("1.점수 통계 출력 2.학생 검색기능 3.학생 점수 수정 기능 4.프로그램 종료 > ");
+            System.out.print("\n1.점수 통계 출력 2.학생 검색기능 3.학생 점수 수정 기능 4.프로그램 종료 > ");
             menu = s.nextInt();
 
             if (menu == 1) {
@@ -71,9 +72,18 @@ public class Main {
                 manager.searchStudentName(name);
             } else if (menu == 3) {
                 // 3) 학생 점수 수정 기능
-
-
-            }else {
+                String name;
+                int kor, eng, math;
+                System.out.print("학생 이름을 입력하세요: ");
+                name = s.next();
+                System.out.print("국어 점수를 입력하세요: ");
+                kor = s.nextInt();
+                System.out.print("영어 점수를 입력하세요: ");
+                eng = s.nextInt();
+                System.out.print("수학 점수를 입력하세요: ");
+                math = s.nextInt();
+                manager.updateStudentScore(name, kor, eng, math);
+            } else {
                 // 4) 프로그램 종료
                 System.out.println("bye!");
                 break;
