@@ -3,6 +3,8 @@ package week14;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -92,11 +94,54 @@ public class Main {
     }
     void J092() {
         // J092. 주차장 입출력 관리
-        SimpleDateFormat s = new SimpleDateFormat();
+        Scanner keyboard = new Scanner(System.in);
+        SimpleDateFormat s = new SimpleDateFormat("yyyyMMdd HHmm");
+        HashMap<Integer, Car> map = new HashMap<>();
         while (true) {
-            System.out.print("1) enter. 2) exit. 3) list. 4) quit. > ");
-        }
+            int menu;
+            System.out.print("\n1) enter. 2) exit. 3) list. 4) quit. > ");
+            menu = keyboard.nextInt();
 
+            if (menu == 1) {
+                // 1) 입차(enter) - 차량번호(4자리)와 차종을 입력받아 주차 등록함
+                int number;
+                String type;
+                System.out.print("Enter number, type > ");
+                number = keyboard.nextInt();
+                type = keyboard.next();
+                String entryTime = s.format(new Date());
+                map.put(number, new Car(number, type, entryTime));
+            } else if (menu == 2) {
+                // 2) 출차(exit) - 주차된 차량 중 하나를 선택하여 주차비용을 계산하고 출차 처리함
+                int number;
+                System.out.print("Enter car number to exit > ");
+                number = keyboard.nextInt();
+
+                if (map.containsKey(number)) {
+                    Car car = map.get(number);
+                    String exitTime = s.format(new Date());
+                    int time = car.calculateTime(car.entryTime, exitTime);
+                    int fee = car.calculateFee(time);
+                    map.remove(number);
+                    System.out.println(car.number + " " + car.type + " " + time + "min, " + "Parking fee " + fee + " (current time " + s.format(new Date()) + ")");
+                } else {
+                    System.out.println("Can't Find Car Number.");
+                }
+            } else if (menu == 3) {
+                // 3) 목록(list) - 현재 주차된 모든 차량 정보와 입차시간을 출력함
+                int i = 1;
+                if (!map.isEmpty()) {
+                    System.out.println("========================================");
+                    System.out.println("num\t\t\ttype\ttime");
+                    for (Car car : map.values())
+                        System.out.println("[" + i++ + "] " + car.number + "\t" + car.type + "\t" + car.entryTime);
+                }
+            } else {
+                // 4) 종료(quit) - 프로그램 종료
+                System.out.println("bye!");
+                break;
+            }
+        }
     }
     void J093() {
         // J093. SimpleChat 기능 추가 #1
