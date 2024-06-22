@@ -1,0 +1,11 @@
+Lionel Messi,34,RW,Argentina,Inter Miami CF
+Cristiano Ronaldo,36,CF,Portugal,Al Nassr FC
+Neymar Jr,29,LW,Brazil,Al Hilal SFC
+Kevin De Bruyne,30,AM,Belgium,Manchester City
+Virgil van Dijk,30,CB,Netherlands,Liverpool
+Manuel Neuer,35,GK,Germany,Bayern Munich
+Kylian Mbappe,25,CF,France,Paris Saint-Germain
+Robert Lewandowski,35,CF,Poland,FC Barcelona
+Heung Min Son,31,LW,South Korea,Tottenham Hotspur
+Martin Odegaard,25,AM,Norway,Arsenal
+Antoine Griezmann,33,CF,France,Atletico Madrid
